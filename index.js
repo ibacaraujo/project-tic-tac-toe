@@ -7,3 +7,11 @@ class Square extends React.Component {
 	  )
 	}
 }
+
+class Board extends React.Component {
+  render() {
+    return (
+      <div>Board</div>
+    );
+  }
+}

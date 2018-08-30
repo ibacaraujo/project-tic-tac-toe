@@ -2,12 +2,73 @@
 <html>
 <head>
   <title>Project Tic-tac-toe</title>
-  <script src="https://unpkg.com/react@15/dist/react.js"></script>
-  <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.30.5/react-bootstrap.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  
+  <script type="text/babel">
+    class Square extends React.Component {
+      render() {
+        return (
+          <button className="square">
+            {/* TODO */}
+          </button>
+	    );
+      }
+    }
+
+    class Board extends React.Component {
+      renderSquare(i) {
+        return <Square />;
+      }
+  
+      render() {
+        return (
+          <div className="status">{status}</div>
+          <div className="board-row">
+            {this.renderSquare(0)}
+            {this.renderSquare(1)}
+            {this.renderSquare(2)}
+          </div>
+          <div className="board-row">
+            {this.renderSquare(3)}
+            {this.renderSquare(4)}
+            {this.renderSquare(5)}
+          </div>
+          <div className="board-row">
+            {this.renderSquare(6)}
+            {this.renderSquare(7)}
+            {this.renderSquare(8)}
+          </div>
+        );
+      }
+    }
+
+	class Game extends React.Component {
+	  render() {
+		return (
+		  <div className="game">
+			<div className="game-board">
+			  <Board />
+			</div>
+			<div className="game-info">
+			  <div>{/* status */}</div>
+			  <ol>{/* TODO */}</ol>
+			</div>
+		  </div>
+		);
+	  }
+	}
+
+    ReactDOM.render(
+      <Game />,
+      document.getElementById('root')
+    );
+  </script>
 </head>
 <body>
 	<div id="root"></div>
-	<script type="text/babel" src="index.js"></script>
+	
 </body>
 </html>
